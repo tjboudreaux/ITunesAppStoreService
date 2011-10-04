@@ -1,0 +1,113 @@
+<!doctype html> 
+<html> 
+	<head> 
+ 		<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+ 		<link href="css/reset.css" rel="stylesheet" type="text/css" media="screen" /> 
+		<link href="css/core.css" rel="stylesheet" type="text/css" media="screen" /> 
+ 		<title>ITunesAppStoreService - A PHP Wrapper to the iTunes App Store</title>
+		
+		<script src="js/prettify/prettify.js" type="text/javascript"
+		 onerror="alert('Error: failed to load ' + this.src)"></script>
+
+		<link rel="stylesheet" type="text/css" href="js/prettify/prettify.css" />
+		<link rel="stylesheet" type="text/css" href="js/prettify/test_styles.css" />
+
+	</head> 
+	<body onload="prettyPrint()"> 
+		<!-- Header for documentation -->
+ 		<div id="header_wrap"> 
+ 			<div id="header"> 
+				<h1 id="logo"><a href="#">ITunesAppStoreService</a></h1> 
+				<p id="sub">an iTunes App Store Web Service wrapper by <em class="author">Travis Boudreaux</em></p> 
+			</div> 
+		</div> 
+ 		
+		<!-- Intro for documentation -->
+		<div id="intro_wrap"> 
+			<div id="intro"> 
+ 				<p id="hello">Hi, there! Thank you for purchasing my template! This document will guide you through understanding the basics of how to modify the template files to suit your needs. If you have other questions please contact me via my user page contact form <a href="http://themeforest.net/user/tjboudreaux">here</a>, or via email.</p> 
+ 				<ul id="additional_info"> 
+					<li>Twitter: <a href="http://www.twitter.com/tjboudreaux">tjboudreaux</a></li> 
+					<li>Email: <a href="mailto:travis+themeforest@travisboudreaux.com">travis@travisboudreaux.com</a></li> 
+				</ul> 
+ 			</div> 
+		</div> 
+		<!-- Content for documentation -->
+	 	<div id="content_wrap"> 
+	 		<div id="content"> 
+	 			<h2 id="toc">Table of Contents</h2> 
+	 			<ol> 
+					<li><a href="#requirements">Requirements</a></li>		
+					<li><a href="#app_id">Finding Your App ID</a></li> 
+					<li><a href="#new_instance">Creating a new instance</a></li> 
+					<li><a href="#available_fields">Available Fields</a></li> 
+				</ol> 
+ 
+				<h3 id="requirements">Requirements<a href="#toc">top</a></h3> 
+				<p>The following is required to run use the service:</p>
+				<ul>
+					<li>PHP 5 or greater with CURL enabled. </li> 
+	 			</ul>
+
+				<h3 id="overview">Find Your App ID<a href="#toc">top</a></h3> 
+ 				<img src="images/app_id.png" width="491" height="282" alt="" /> 
+				<p>Login to iTunes Connect by going to the Apple Developer portal <a herf="http://developer.apple.com" target="_blank">here</a>. Once you are logged in, click on the iTunes Connect icon.  You will now be on a page with a list of your applications.  Click on the application you are setting up a site for.</p> 
+				
+ 
+				<h4>Selecting The ID</h4> 
+	 			<p>Once you've found your application and opened it, you will see a screen similar to the one shown here.  You can copy the Apple ID from the site, and paste it into the contructor of the class.</p> 
+				
+				<h3 id="new_instance">Create a new instance of the Class<a href="#toc">top</a></h3>
+				<p>Now that you've found your APP ID, you can instantiate a new class with the following:</p>
+				<pre class="prettyprint" id="PHP">
+//The app ID for your app
+$appId = "284910350";   
+//require the library to connect to iTunes
+require_once "ITunesAppStoreService.php";
+//create a new instance of ITunesAppStoreService
+$app = new ITunesAppStoreService($appId);
+//manually call retrieve when you are ready to make the remote call to the iTunes Web Service
+try{
+    $app->retrieve();
+} catch (Exception $e) {
+    //the class will throw an error if you do not set the app ID in the 
+    //constructor, or if the iTunes Web Service returns some invalid data.
+    echo $e->getMessage();
+}    
+				</pre>
+				
+				<h3 id="available_fields">Available Fields<a href="#toc">top</a></h3>
+				<p>Once you've ran the retrieve function you will have access to the following public class variables:</p>
+				
+				<pre class="prettyprint" id="PHP2">
+$app->averageRating      //The average of all of the ratings for your app
+$app->description        //The description you set in iTunes Connect for your app
+$app->developerUrl       //The developer url you listed for the app in iTunes Connect
+$app->iTunesWebUrl       //The web based version of iTunes preview URL
+$app->largeThumbnail     //The large thumbnail you upload for your app in iTunes Connect. 512x512
+$app->name               //The name of your app in iTunes Connect.
+$app->numberOfRatings    //The total number of ratings for all versions of your app
+$app->numberOfRatingsForCurrentVersion   //The total number of ratings for the current version of your app
+$app->price              //The current price of your app
+$app->isFree             //A boolean value to check if your app is free or paid.
+$app->iPhoneScreenshots  //An array of urls to your iPhone screenshots.
+$app->iPadScreenshots    //An array of urls to your iPad screenshots.
+$app->smallThumbnail     //The small thumbnail your upload for your app in iTunes Connect.
+$app->version            //The current version number published in the store of your app.
+				</pre>
+			</div> 
+		</div> 
+		
+ 		<!-- Footer for documentation -->
+		<div id="footer_wrap"> 
+			<div id="footer"> 
+				<p id="goodbye">Thanks for purchasing this class.  If you need any help using it, feel free to contact me and I will do everything I can to help.<br/> <br/> <strong>Travis Boudreaux</strong> </p> 
+				<ul id="additional_options"> 
+					<li><a href="#toc">Go To Table of Contents</a></li> 
+					<li><a href="mailto:travis+themeforest@travisboudreaux.com">Send Me an Email</a> 
+				</ul> 
+			</div> 
+		</div> 
+		
+	</body> 
+</html>

@@ -1,0 +1,48 @@
+body{font:normal 13px/20px "Helvetica Neue",Arial,sans-serif;color:#3C3C3C;}
+
+h1{font:36px/40px "Helvetica Neue",Arial,sans-serif;}
+h1 a{color:#fff; text-decoration:none;}
+h1 a:hover {text-decoration:none; color:#ccc;}
+h2{padding:10px 0;font:bold 24px/40px Georgia,serif;}
+h3{padding:25px 0 10px 0;border-top:5px solid #E0E0E0;margin:40px 0 0 0;font:bold 21px/40px Cambria,"Times New Roman",serif;}
+h3 a{float:right;margin:10px 0 0 0;font:13px/20px "Times New Roman",serif;}
+h4{margin:20px 0 0 0;font:18px/40px Cambria,"Times New Roman",serif;}
+h4 em{font:13px/20px Cambria,"Times New Roman",serif;}
+h5{font:16px/40px Cambria,"Times New Roman",serif;}
+
+p{margin:0 0 20px 0;}
+
+
+
+a{color:#2875D6;}
+a:hover{color:#285F9B;text-decoration:none;}
+
+code{display:block;padding:0 0 0 20px;border-left:5px solid #E9E9E9;margin:0 0 20px 0;font:13px/20px "Lucida Sans Unicode",Arial,sans-serif;}
+em{padding:2px 5px;font-style:normal;background:#FFFAB7;}
+ul{margin:0 0 20px 0;}
+
+/***** HEADER *****/
+#header_wrap{background:#0A0A0A;}
+#header{overflow:auto;width:780px;padding:20px 0;margin:0 auto;}
+#logo{float:left;}
+#sub{float:right;margin:12px 0 0 0;font:13px/20px "Helvetica Neue",Arial,sans-serif;color:#DDD;}
+#sub em{font-weight:bold;color:#FFF;background:#0A0A0A;}
+
+/***** INTRO *****/
+#intro_wrap{background:#E5E5E5;}
+#intro{overflow:auto;width:780px;padding:20px 0 0 0;margin:0 auto;}
+#hello{float:left;width:520px;padding:0 19px 0 0;border-right:1px solid #FFF;}
+#additional_info{float:right;width:220px;padding:0 0 20px 19px;border-left:1px solid #CCC;}
+
+/***** CONTENT *****/
+#content{width:780px;padding:20px 0;margin:0 auto;}
+.meta{overflow:auto;margin:-10px 0 10px 0;font:13px/20px "Helvetica Neue",Arial,sans-serif;color:#7A7A7A;}
+.meta span,.meta ul{float:left;}
+.meta li{float:left;padding:2px 5px;margin:0 0 0 5px;color:#3C3C3C;background:#FFFAB7;}
+#content img{float:right;border:5px solid #E9E9E9;margin:0 0 20px 20px;}
+
+/***** FOOTER *****/
+#footer_wrap{background:#E5E5E5;}
+#footer{overflow:auto;width:780px;padding:20px 0 0 0;margin:0 auto;}
+#goodbye{float:left;width:520px;padding:0 19px 0 0;border-right:1px solid #FFF;}
+#additional_options{float:right;width:220px;padding:0 0 100px 19px;border-left:1px solid #CCC;}
